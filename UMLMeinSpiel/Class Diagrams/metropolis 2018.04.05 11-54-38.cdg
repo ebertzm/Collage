@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="metropolis">
+  <ClassDiagramComponents>
+    <Class name="Superman" package="de.metropolis.lebewesen" visibility="public" xPosition="19.0" yPosition="10.0">
+      <Fields>
+        <Field name="identitÃ¤t" type="String" visibility="private"/>
+        <Field name="weltRettungen" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="starten" returnType="void" visibility="public"/>
+        <Method name="fliegen" returnType="void" visibility="public"/>
+        <Method name="landen" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vogel" package="de.metropolis.lebewesen" visibility="public" xPosition="19.0" yPosition="188.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="starten" returnType="void" visibility="public"/>
+        <Method name="fliegen" returnType="void" visibility="public"/>
+        <Method name="landen" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Flugmaschine" package="de.metropolis.maschinen" visibility="public" xPosition="19.0" yPosition="328.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="starten" returnType="void" visibility="public"/>
+        <Method name="fliegen" returnType="void" visibility="public"/>
+        <Method name="landen" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Flugzeug" package="de.metropolis.maschinen" visibility="public" xPosition="306.0" yPosition="279.0">
+      <Fields>
+        <Field name="gewicht" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="starten" returnType="void" visibility="public"/>
+        <Method name="fliegen" returnType="void" visibility="public"/>
+        <Method name="landen" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Hubschrauber" package="de.metropolis.maschinen" visibility="public" xPosition="330.0" yPosition="80.0">
+      <Fields>
+        <Field name="anzahlDerSitzplaetze" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="starten" returnType="void" visibility="public"/>
+        <Method name="fliegen" returnType="void" visibility="public"/>
+        <Method name="landen" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MetropolisAirport" package="metropolis" visibility="public" xPosition="290.0" yPosition="10.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="givePermissionToLand" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Flieger" name="f"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Flieger" package="metropolis" visibility="public" xPosition="613.0" yPosition="110.0">
+      <Methods>
+        <Method name="starten" returnType="void" visibility="package"/>
+        <Method name="fliegen" returnType="void" visibility="package"/>
+        <Method name="landen" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="metropolis.MetropolisAirport" target="metropolis.Flieger" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="de.metropolis.maschinen.Hubschrauber" target="de.metropolis.maschinen.Flugmaschine"/>
+    <IsRelation name="is" source="de.metropolis.maschinen.Flugzeug" target="de.metropolis.maschinen.Flugmaschine"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="de.metropolis.lebewesen.Vogel" target="metropolis.Flieger"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="de.metropolis.lebewesen.Superman" target="metropolis.Flieger"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="de.metropolis.maschinen.Flugzeug" target="metropolis.Flieger"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="de.metropolis.maschinen.Hubschrauber" target="metropolis.Flieger"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
